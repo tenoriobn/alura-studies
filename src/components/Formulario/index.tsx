@@ -38,4 +38,4 @@ class Formulario extends React.Component {
   }
 }
 
-export default Formulario
+export default Formulario;
