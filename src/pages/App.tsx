@@ -17,7 +17,6 @@ function App() {
     })));
   }
 
-  console.log(tarefas)
   return (
     <div className={style.AppStyle}>
       <Formulario setTarefas={setTarefas} />
