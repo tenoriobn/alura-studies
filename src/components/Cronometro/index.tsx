@@ -2,7 +2,7 @@ import Botao from "../Botao";
 import Relogio from "./Relogio";
 import style from './Cronometro.module.scss';
 import { ITarefa } from "../../types/tarefa";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { TempoParaSegundos } from "../../common/utils/time";
 
 interface Props {
@@ -12,9 +12,11 @@ interface Props {
 export default function Cronometro({ selecionado }: Props) {
   const [tempo, setTempo] = useState<number>();
 
-  if (selecionado?.tempo) {
-    setTempo(TempoParaSegundos(selecionado?.tempo))
-  }
+  useEffect(() => {
+    if (selecionado?.tempo) {
+      setTempo(TempoParaSegundos(selecionado.tempo));
+    }
+  }, [selecionado])
 
   return (
     <div className={style.cronometro}>
